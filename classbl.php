@@ -7,16 +7,12 @@ class flashlight
     public $lampochka = "лампочка";
     public $battery = "батарейка";
     // поведение
-    public function nobattery($battery)
-    {
-        $this->$battery = false;
-    } 
     // отсутствует батарейка
-    public function battery($battery)
+    public function inputbattery($battery)
     {
         $this->$battery = true;
     }
-    // батарейка есть
+    // вставить батарейку
     public function vkl($button, $lampochka)
     {
         $this->$button = true;
@@ -35,7 +31,7 @@ class flashlight
 //жизненный цикл
 $object = new flashlight();
 $object->nobattery("батарейки нет");
-$object->battery("батарейка есть");
+$object->inputbattery("батарейка есть");
 $object->vkl("фонарик включен");
 $object->vykl("фонарик выключен");
 ?>
